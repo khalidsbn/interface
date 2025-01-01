@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short Videos</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="videos.html">
+                        <span class="icon">
+                            <ion-icon name="logo-youtube"></ion-icon>
+                        </span>
+                        <span class="title">Reels</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="videos.html">
+                        <span class="icon">
+                            <ion-icon name="logo-tiktok"></ion-icon>
+                        </span>
+                        <span class="title">Latest Videos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="title">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label for="categoryDropdown">Filter by Category:</label>
+                    <select id="categoryDropdown" onchange="filterVideosByCategory()">
+                        <option value="all">All Categories</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Fitness">Fitness</option>
+                        <option value="Lifestyle">Lifestyle</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Transportation">Transportation</option>
+                        <option value="Leisure">Leisure</option>
+                        <option value="Education">Education</option>
+                        <option value="Health">Health</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Sports">Sports</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Videos Section -->
+            <div class="video-list" id="videoList">
+                <h1>Latest Videos</h1>
+                <br>
+
+                <!-- First Video -->
+                <div class="video-card" data-category="Education">
+                    <h2>First video</h2>
+                    <p>First video on the platform</p>
+                    <p>Category: Education</p>
+                    <video controls width="640" height="360">
+                        <source src="../uploads/mapping.MP4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="rating">
+                        <label for="rating-1">Rate this video:</label>
+                        <select id="rating-1" class="rating-select">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <button onclick="submitRating(1)">Submit Rating</button>
+                        <p id="rating-result-1"></p>
+                    </div>
+                    <div class="comments">
+                        <label for="comment-1"></label>
+                        <textarea id="comment-1" rows="3" placeholder="Write your comment here"></textarea>
+                        <br>
+                        <button onclick="submitComment(1)">Submit Comment</button>
+                        <div id="comment-list-1" class="comment-list"></div>
+                    </div>
+                </div>
+
+                <br>
+                <!-- Christmas Running -->
+                <div class="video-card" data-category="Fitness">
+                    <h2>Christmas running</h2>
+                    <p>Description: Celebrating Christmas by running in a group</p>
+                    <p>Category: Fitness</p>
+                    <video controls width="640" height="360">
+                        <source src="../uploads/Running.MP4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="rating">
+                        <label for="rating-2">Rate this video:</label>
+                        <select id="rating-2" class="rating-select">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <button onclick="submitRating(2)">Submit Rating</button>
+                        <p id="rating-result-2"></p>
+                    </div>
+                    <div class="comments">
+                        <label for="comment-2"></label>
+                        <textarea id="comment-2" rows="3" placeholder="Write your comment here"></textarea>
+                        <br>
+                        <button onclick="submitComment(2)">Submit Comment</button>
+                        <div id="comment-list-2" class="comment-list"></div>
+                    </div>
+                </div>
+
+                <br>
+                <!-- Mapping the Flor -->
+                <div class="video-card" data-category="Lifestyle">
+                    <h2>Mapping the flor</h2>
+                    <p>Description: Mapping the flor after 8 hours of work</p>
+                    <p>Category: Lifestyle</p>
+                    <video controls width="640" height="360">
+                        <source src="../uploads/shopping.MP4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="rating">
+                        <label for="rating-3">Rate this video:</label>
+                        <select id="rating-3" class="rating-select">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <button onclick="submitRating(3)">Submit Rating</button>
+                        <p id="rating-result-3"></p>
+                    </div>
+                    <div class="comments">
+                        <label for="comment-3"></label>
+                        <textarea id="comment-3" rows="3" placeholder="Write your comment here"></textarea>
+                        <br>
+                        <button onclick="submitComment(3)">Submit Comment</button>
+                        <div id="comment-list-3" class="comment-list"></div>
+                    </div>
+                </div>
+
+                <br>
+                <!-- Shopping in the Weekend -->
+                <div class="video-card" data-category="Travel">
+                    <h2>Shopping in the weekend</h2>
+                    <p>Description: A student shopping in the weekend after a long week at university</p>
+                    <p>Category: Travel</p>
+                    <video controls width="640" height="360">
+                        <source src="../uploads/Testvideo.MP4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="rating">
+                        <label for="rating-4">Rate this video:</label>
+                        <select id="rating-4" class="rating-select">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <button onclick="submitRating(4)">Submit Rating</button>
+                        <p id="rating-result-4"></p>
+                    </div>
+                    <div class="comments">
+                        <label for="comment-4"></label>
+                        <textarea id="comment-4" rows="3" placeholder="Write your comment here"></textarea>
+                        <br>
+                        <button onclick="submitComment(4)">Submit Comment</button>
+                        <br>
+                        <div id="comment-list-4" class="comment-list"></div>
+                    </div>
+                </div>
+
+                <br>
+                <!-- Uber Ride -->
+                <div class="video-card" data-category="Transportation">
+                    <h2>Taking uber for the first time</h2>
+                    <p>Description: Student paid £10 for uber</p>
+                    <p>Category: Transportation</p>
+                    <video controls width="640" height="360">
+                        <source src="../uploads/uber.MP4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="rating">
+                        <label for="rating-5">Rate this video:</label>
+                        <select id="rating-5" class="rating-select">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <button onclick="submitRating(5)">Submit Rating</button>
+                        <p id="rating-result-5"></p>
+                    </div>
+                    <div class="comments">
+                        <label for="comment-5"></label>
+                        <textarea id="comment-5" rows="3" placeholder="Write your comment here"></textarea>
+                        <br>
+                        <button onclick="submitComment(5)">Submit Comment</button>
+                        <div id="comment-list-5" class="comment-list"></div>
+                    </div>
+                </div>
+
+                <br>
+                <!-- Spending the Weekend -->
+                <div class="video-card" data-category="Entertainment">
+                    <h2>Spending weekend with friends</h2>
+                    <p>Description: Went out to countryside with best friends</p>
+                    <p>Category: Entertainment</p>
+                    <video controls width="640" height="360">
+                        <source src="../uploads/weekend.MP4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="rating">
+                        <label for="rating-6">Rate this video:</label>
+                        <select id="rating-6" class="rating-select">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <button onclick="submitRating(6)">Submit Rating</button>
+                        <p id="rating-result-6"></p>
+                    </div>
+                    <div class="comments">
+                        <label for="comment-6"></label>
+                        <textarea id="comment-6" rows="3" placeholder="Write your comment here"></textarea>
+                        <br>
+                        <button onclick="submitComment(6)">Submit Comment</button>
+                        <div id="comment-list-6" class="comment-list"></div>
+                    </div>
+                </div>
+
+                <br>
+                <!-- Learning Montage -->
+                <div class="video-card" data-category="Education">
+                    <h2>Learning montage</h2>
+                    <p>Description: Learning video editing to make money</p>
+                    <p>Category: Education</p>
+                    <video controls width="640" height="360">
+                        <source src="../uploads/IMG_1238.MP4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="rating">
+                        <label for="rating-7">Rate this video:</label>
+                        <select id="rating-7" class="rating-select">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <button onclick="submitRating(7)">Submit Rating</button>
+                        <p id="rating-result-7"></p>
+                    </div>
+                    <div class="comments">
+                        <label for="comment-7"></label>
+                        <textarea id="comment-7" rows="3" placeholder="Write your comment here"></textarea>
+                        <br>
+                        <button onclick="submitComment(7)">Submit Comment</button>
+                        <div id="comment-list-7" class="comment-list"></div>
+                    </div>
+                </div>
+
+                <br>
+                <!-- Travel to Spain -->
+                <div class="video-card" data-category="Travel">
+                    <h2>Travel to Spain</h2>
+                    <p>Description: Travel with family and friends to Spain</p>
+                    <p>Category: Travel</p>
+                    <video controls width="640" height="360">
+                        <source src="../uploads/IMG_1232.MP4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="rating">
+                        <label for="rating-8">Rate this video:</label>
+                        <select id="rating-8" class="rating-select">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <button onclick="submitRating(8)">Submit Rating</button>
+                        <p id="rating-result-8"></p>
+                    </div>
+                    <div class="comments">
+                        <label for="comment-8"></label>
+                        <textarea id="comment-8" rows="3" placeholder="Write your comment here"></textarea>
+                        <br>
+                        <button onclick="submitComment(8)">Submit Comment</button>
+                        <div id="comment-list-8" class="comment-list"></div>
+                    </div>
+                </div>
+
+                <br>
+                <!-- Training with Coach -->
+                <div class="video-card" data-category="Fitness">
+                    <h2>Training with coach</h2>
+                    <p>Description: Outdoor training with kickboxing coach</p>
+                    <p>Category: Fitness</p>
+                    <video controls width="640" height="360">
+                        <source src="../uploads/IMG_1192.MP4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="rating">
+                        <label for="rating-9">Rate this video:</label>
+                        <select id="rating-9" class="rating-select">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <br>
+                        <button onclick="submitRating(9)">Submit Rating</button>
+                        <p id="rating-result-9"></p>
+                    </div>
+                    <div class="comments">
+                        <label for="comment-9"></label>
+                        <textarea id="comment-9" rows="3" placeholder="Write your comment here"></textarea>
+                        <br>
+                        <button onclick="submitComment(9)">Submit Comment</button>
+                        <div id="comment-list-9" class="comment-list"></div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        function filterVideosByCategory() {
+            const selectedCategory = document.getElementById('categoryDropdown').value;
+            const videoCards = document.querySelectorAll('.video-card');
+            videoCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                card.style.display = (selectedCategory === 'all' || category === selectedCategory) ? 'block' : 'none';
+            });
+        }
+
+        function submitRating(videoId) {
+            const rating = document.getElementById(`rating-${videoId}`).value;
+            document.getElementById(`rating-result-${videoId}`).innerText = `You rated this video: ${rating}/5`;
+        }
+
+        function submitComment(videoId) {
+            const commentInput = document.getElementById(`comment-${videoId}`);
+            const commentText = commentInput.value;
+            if (commentText.trim()) {
+                const commentList = document.getElementById(`comment-list-${videoId}`);
+                const newComment = document.createElement('p');
+                newComment.textContent = commentText;
+                commentList.appendChild(newComment);
+                commentInput.value = '';
+            } else {
+                alert('Please write a comment before submitting.');
+            }
+        }
+    </script>
+</body>
+
+</html>
